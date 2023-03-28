@@ -1,0 +1,64 @@
+<section>
+  <div class="block">
+    <div class="row">
+      <p class="para">Total de revenu</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/diagramme-circulaire.png" alt="">
+        <div class="montant">
+          <h1>500.000 <span>XAF</span></h1>
+           <p>Total global</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Plus grosse depense</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/diagramme-circulaire.png" alt="">
+        <div class="montant">
+          <h1>50.000 <span>XAF</span></h1>
+          <p>Education</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Total de revenu</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/diagramme-circulaire2.png" alt="">
+        <div class="list-revenu">
+          <div class="revenu">
+            <p>Salaire</p>
+            <div class="square"></div>
+          </div>
+          <div class="revenu">
+            <p>Business</p>
+            <div class="square"></div>
+          </div>
+          <div class="revenu">
+            <p>Autres</p>
+            <div class="square"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block2">
+
+    <div class="titre">
+      <button>Ce mois</button>
+      <button>Cette semaine</button>
+      <button>Aujourd'hui</button>
+    </div>
+    <div class="top">
+      <apx-chart id="statistics1" [series]="chartOptions.series" [chart]="chartOptions.chart"
+                                  [dataLabels]="chartOptions.dataLabels" [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis"
+                                  [fill]="chartOptions.fill" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip"
+                                  [xaxis]="chartOptions.xaxis" [grid]="chartOptions.grid">
+      </apx-chart>
+      <!-- <canvas id="piechart"></canvas> -->
+    </div>
+  </div>
+</section>
