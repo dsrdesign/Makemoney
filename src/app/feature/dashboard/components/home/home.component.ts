@@ -48,20 +48,27 @@ export type ChartOption1 = {
 })
 export class HomeComponent implements OnInit {
   @ViewChild("chart") chart!: ChartComponent;
-  public chartOptions: Partial<ChartOptions>;
-  public chartOption1: Partial<ChartOption1>;
+  public chartRevenu: Partial<ChartOptions>;
+  public chartDepense: Partial<ChartOptions>;
+  public chartOptions2: Partial<ChartOptions>;
+
+  public chartOptionG: Partial<ChartOption1>;
 
 
 
-   depenseMois: number = 10
+   depenseMois: number = 0
    revenuMois: number = 0
+
+   pourcentRevenu: number = 0
+   pourcentDepense: number = 0
+
   //  montantMois: number = []
 
 
 
   constructor(private homeService: HomeService){
-    this.chartOptions = {
-      series: [75],
+    this.chartRevenu = {
+      series: [this.pourcentRevenu],
       chart: {
         height: 200,
         type: "radialBar",
@@ -139,7 +146,165 @@ export class HomeComponent implements OnInit {
       labels: ["Percent"]
     };
 
-    this.chartOption1 = {
+    this.chartDepense = {
+      series: [this.pourcentDepense],
+      chart: {
+        height: 200,
+        type: "radialBar",
+        toolbar: {
+          show: true
+        }
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 225,
+          hollow: {
+            margin: 0,
+            size: "70%",
+            background: "#fff",
+            image: undefined,
+            position: "front",
+            dropShadow: {
+              enabled: true,
+              top: 3,
+              left: 0,
+              blur: 4,
+              opacity: 0.24
+            }
+          },
+          track: {
+            background: "#fff",
+            strokeWidth: "7%",
+            margin: 0, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: -3,
+              left: 0,
+              blur: 4,
+              opacity: 0.35
+            }
+          },
+
+          dataLabels: {
+            show: true,
+            name: {
+              offsetY: -10,
+              show: false,
+              color: "#888",
+              fontSize: "17px"
+            },
+            value: {
+              formatter: function(val: { toString: () => string; }) {
+                return parseInt(val.toString(), 10).toString() + '%';
+              },
+              color: "#111",
+              fontSize: "36px",
+              show: true
+            }
+          }
+        }
+      },
+      fill: {
+        show: false,
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          type: "horizontal",
+          shadeIntensity: 0.5,
+          gradientToColors: ["#ABE5A1"],
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100]
+        }
+      },
+      stroke: {
+        lineCap: "round"
+      },
+      labels: ["Percent"]
+    };
+
+    this.chartOptions2 = {
+      series: [this.depenseMois],
+      chart: {
+        height: 200,
+        type: "radialBar",
+        toolbar: {
+          show: true
+        }
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 225,
+          hollow: {
+            margin: 0,
+            size: "70%",
+            background: "#fff",
+            image: undefined,
+            position: "front",
+            dropShadow: {
+              enabled: true,
+              top: 3,
+              left: 0,
+              blur: 4,
+              opacity: 0.24
+            }
+          },
+          track: {
+            background: "#fff",
+            strokeWidth: "7%",
+            margin: 0, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: -3,
+              left: 0,
+              blur: 4,
+              opacity: 0.35
+            }
+          },
+
+          dataLabels: {
+            show: true,
+            name: {
+              offsetY: -10,
+              show: false,
+              color: "#888",
+              fontSize: "17px"
+            },
+            value: {
+              formatter: function(val: { toString: () => string; }) {
+                return parseInt(val.toString(), 10).toString() + '%';
+              },
+              color: "#111",
+              fontSize: "36px",
+              show: true
+            }
+          }
+        }
+      },
+      fill: {
+        show: false,
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          type: "horizontal",
+          shadeIntensity: 0.5,
+          gradientToColors: ["#ABE5A1"],
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100]
+        }
+      },
+      stroke: {
+        lineCap: "round"
+      },
+      labels: ["Percent"]
+    };
+
+    this.chartOptionG = {
       series: [
         {
           name: "Depenses",
@@ -204,11 +369,100 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.homeService.getActionDuMois("depense").subscribe(res =>{
       this.depenseMois = res.data
+
+      // this.pourcentDepense = (this.depenseMois/this.revenuMois)*100
+
+      // this.chartOptions2 = {
+      //   series: [this.pourcentDepense],
+      //   chart: {
+      //     height: 200,
+      //     type: "radialBar",
+      //     toolbar: {
+      //       show: true
+      //     }
+      //   },
+      //   plotOptions: {
+      //     radialBar: {
+      //       startAngle: -135,
+      //       endAngle: 225,
+      //       hollow: {
+      //         margin: 0,
+      //         size: "70%",
+      //         background: "#fff",
+      //         image: undefined,
+      //         position: "front",
+      //         dropShadow: {
+      //           enabled: true,
+      //           top: 3,
+      //           left: 0,
+      //           blur: 4,
+      //           opacity: 0.24
+      //         }
+      //       },
+      //       track: {
+      //         background: "#fff",
+      //         strokeWidth: "7%",
+      //         margin: 0, // margin is in pixels
+      //         dropShadow: {
+      //           enabled: true,
+      //           top: -3,
+      //           left: 0,
+      //           blur: 4,
+      //           opacity: 0.35
+      //         }
+      //       },
+
+      //       dataLabels: {
+      //         show: true,
+      //         name: {
+      //           offsetY: -10,
+      //           show: false,
+      //           color: "#888",
+      //           fontSize: "17px"
+      //         },
+      //         value: {
+      //           formatter: function(val: { toString: () => string; }) {
+      //             return parseInt(val.toString(), 10).toString() + '%';
+      //           },
+      //           color: "#111",
+      //           fontSize: "36px",
+      //           show: true
+      //         }
+      //       }
+      //     }
+      //   },
+      //   fill: {
+      //     show: false,
+      //     type: "gradient",
+      //     gradient: {
+      //       shade: "dark",
+      //       type: "horizontal",
+      //       shadeIntensity: 0.5,
+      //       gradientToColors: ["#ABE5A1"],
+      //       inverseColors: true,
+      //       opacityFrom: 1,
+      //       opacityTo: 1,
+      //       stops: [0, 100]
+      //     }
+      //   },
+      //   stroke: {
+      //     lineCap: "round"
+      //   },
+      //   labels: ["Percent"]
+      // };
+
+      this.pourcentage()
     })
 
     this.homeService.getActionDuMois("revenu").subscribe(res =>{
       this.revenuMois = res.data
+
+      this.pourcentage()
     })
+
+
+
+
 
 
   }
@@ -220,6 +474,172 @@ export class HomeComponent implements OnInit {
 
   actionMois(action: string){
     this.homeService.getActionDuMois(action)
+  }
+
+  pourcentage(){
+    console.log("Revenu: ", this.revenuMois)
+    console.log("Depense: ", this.depenseMois)
+
+    this.pourcentDepense = (this.depenseMois/this.revenuMois)*100
+    this.pourcentRevenu = 100 - (this.depenseMois/this.revenuMois)*100
+
+    this.chartRevenu = {
+      series: [this.pourcentRevenu],
+      chart: {
+        height: 200,
+        type: "radialBar",
+        toolbar: {
+          show: true
+        }
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 225,
+          hollow: {
+            margin: 0,
+            size: "70%",
+            background: "#fff",
+            image: undefined,
+            position: "front",
+            dropShadow: {
+              enabled: true,
+              top: 3,
+              left: 0,
+              blur: 4,
+              opacity: 0.24
+            }
+          },
+          track: {
+            background: "#fff",
+            strokeWidth: "7%",
+            margin: 0, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: -3,
+              left: 0,
+              blur: 4,
+              opacity: 0.35
+            }
+          },
+
+          dataLabels: {
+            show: true,
+            name: {
+              offsetY: -10,
+              show: false,
+              color: "#888",
+              fontSize: "17px"
+            },
+            value: {
+              formatter: function(val: { toString: () => string; }) {
+                return parseInt(val.toString(), 10).toString() + '%';
+              },
+              color: "#111",
+              fontSize: "36px",
+              show: true
+            }
+          }
+        }
+      },
+      fill: {
+        show: false,
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          type: "horizontal",
+          shadeIntensity: 0.5,
+          gradientToColors: ["#ABE5A1"],
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100]
+        }
+      },
+      stroke: {
+        lineCap: "round"
+      },
+      labels: ["Percent"]
+    };
+
+    this.chartDepense = {
+      series: [this.pourcentDepense],
+      chart: {
+        height: 200,
+        type: "radialBar",
+        toolbar: {
+          show: true
+        }
+      },
+      plotOptions: {
+        radialBar: {
+          startAngle: -135,
+          endAngle: 225,
+          hollow: {
+            margin: 0,
+            size: "70%",
+            background: "#fff",
+            image: undefined,
+            position: "front",
+            dropShadow: {
+              enabled: true,
+              top: 3,
+              left: 0,
+              blur: 4,
+              opacity: 0.24
+            }
+          },
+          track: {
+            background: "#fff",
+            strokeWidth: "7%",
+            margin: 0, // margin is in pixels
+            dropShadow: {
+              enabled: true,
+              top: -3,
+              left: 0,
+              blur: 4,
+              opacity: 0.35
+            }
+          },
+
+          dataLabels: {
+            show: true,
+            name: {
+              offsetY: -10,
+              show: false,
+              color: "#888",
+              fontSize: "17px"
+            },
+            value: {
+              formatter: function(val: { toString: () => string; }) {
+                return parseInt(val.toString(), 10).toString() + '%';
+              },
+              color: "#111",
+              fontSize: "36px",
+              show: true
+            }
+          }
+        }
+      },
+      fill: {
+        show: false,
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          type: "horizontal",
+          shadeIntensity: 0.5,
+          gradientToColors: ["#ABE5A1"],
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 100]
+        }
+      },
+      stroke: {
+        lineCap: "round"
+      },
+      labels: ["Percent"]
+    };
   }
 
 

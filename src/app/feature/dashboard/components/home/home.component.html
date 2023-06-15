@@ -16,7 +16,7 @@
       <div class="graphe">
         <img src=".//src/assets/images/le-revenu.png" alt="">
         <div class="montant">
-          <h1>50.000 <span>XAF</span></h1>
+          <h1>0 <span>XAF</span></h1>
           <p>Education</p>
         </div>
       </div>
@@ -50,16 +50,16 @@
 
   <div class="block">
     <div class="row">
-      <p class="para">Total des revenus</p>
+      <p class="para">Revenus restants</p>
       <div class="graphe">
         <div id="chart">
           <apx-chart
-            [series]="chartOptions.series"
-            [chart]="chartOptions.chart"
-            [plotOptions]="chartOptions.plotOptions"
-            [labels]="chartOptions.labels"
-            [fill]="chartOptions.fill"
-            [stroke]="chartOptions.stroke"
+            [series]="chartRevenu.series"
+            [chart]="chartRevenu.chart"
+            [plotOptions]="chartRevenu.plotOptions"
+            [labels]="chartRevenu.labels"
+            [fill]="chartRevenu.fill"
+            [stroke]="chartRevenu.stroke"
           ></apx-chart>
         </div>
       </div>
@@ -70,13 +70,13 @@
       <div class="graphe">
         <div id="chart">
           <apx-chart
-            [series]="chartOptions.series"
-            [chart]="chartOptions.chart"
-            [plotOptions]="chartOptions.plotOptions"
-            [labels]="chartOptions.labels"
-            [legend]="chartOptions.legend"
-            [fill]="chartOptions.fill"
-            [stroke]="chartOptions.stroke"
+            [series]="chartOptions2.series"
+            [chart]="chartOptions2.chart"
+            [plotOptions]="chartOptions2.plotOptions"
+            [labels]="chartOptions2.labels"
+            [legend]="chartOptions2.legend"
+            [fill]="chartOptions2.fill"
+            [stroke]="chartOptions2.stroke"
           ></apx-chart>
         </div>
       </div>
@@ -87,12 +87,12 @@
       <div class="graphe">
         <div id="chart">
           <apx-chart
-            [series]="chartOptions.series"
-            [chart]="chartOptions.chart"
-            [plotOptions]="chartOptions.plotOptions"
-            [labels]="chartOptions.labels"
-            [fill]="chartOptions.fill"
-            [stroke]="chartOptions.stroke"
+            [series]="chartDepense.series"
+            [chart]="chartDepense.chart"
+            [plotOptions]="chartDepense.plotOptions"
+            [labels]="chartDepense.labels"
+            [fill]="chartDepense.fill"
+            [stroke]="chartDepense.stroke"
           ></apx-chart>
         </div>
       </div>
@@ -105,16 +105,16 @@
       <div class="graphe">
         <div id="chart1">
           <apx-chart
-    [series]="chartOption1.series"
-    [chart]="chartOption1.chart"
-    [dataLabels]="chartOption1.dataLabels"
-    [plotOptions]="chartOption1.plotOptions"
-    [yaxis]="chartOption1.yaxis"
-    [legend]="chartOption1.legend"
-    [fill]="chartOption1.fill"
-    [stroke]="chartOption1.stroke"
-    [tooltip]="chartOption1.tooltip"
-    [xaxis]="chartOption1.xaxis"
+    [series]="chartOptionG.series"
+    [chart]="chartOptionG.chart"
+    [dataLabels]="chartOptionG.dataLabels"
+    [plotOptions]="chartOptionG.plotOptions"
+    [yaxis]="chartOptionG.yaxis"
+    [legend]="chartOptionG.legend"
+    [fill]="chartOptionG.fill"
+    [stroke]="chartOptionG.stroke"
+    [tooltip]="chartOptionG.tooltip"
+    [xaxis]="chartOptionG.xaxis"
   ></apx-chart>
         </div>
       </div>
