@@ -1,0 +1,113 @@
+<section>
+
+  <h1>Nouveau revenu</h1>
+  <div class="forms">
+    <form novalidate #registerForm="ngForm" (ngSubmit)="enrDepense(registerForm.value)">
+
+      <div class="blocks-input">
+        <div class="block">
+          <label for="">Categorie de revenu</label>
+          <select name="categorie"
+            [(ngModel)]="revenu.categorie"
+            #categorie = "ngModel"
+            [ngClass]="{'is-invalid': categorie.touched && !categorie.valid}"
+            required>
+            <option value="" disabled selected > Selectionner une categorie</option>
+            <option *ngFor="let categorie of categories" value={{categorie.id}}>{{categorie.categorie}}</option>
+          </select>
+          <div class="invalid-feedback">
+            <span *ngIf="categorie.errors?.['required'] && categorie.touched">
+              Selectionnez une categorie
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Revenu</label>
+          <input type="text" list="Revenu" name="nom" placeholder="Revenu"
+            [(ngModel)]="revenu.nom"
+            #nom = "ngModel"
+            [ngClass]="{'is-invalid': nom.touched && !nom.valid}"
+            minlength="4" required>
+          <datalist id="Revenu">
+            <option value="Salaire chez Tk group">
+            <option value="Revenu de la boutique de Mboppi">
+            <option value="Loyer de la maison de Lopgom">
+            <option value="Vente de terrain">
+          </datalist>
+          <div class="invalid-feedback">
+            <span *ngIf="nom.errors?.['required'] && nom.touched">
+              Entrez une revenu
+            </span>
+            <span *ngIf="nom.errors?.['minlength'] && nom.touched">
+              Minimunm 4 lettres
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Montant</label>
+          <input type="number" placeholder="Montant" name="montant"
+            [(ngModel)]="revenu.montant"
+            #montant = "ngModel"
+            [ngClass]="{'is-invalid': montant.touched && !montant.valid}"
+            required>
+            <div class="invalid-feedback">
+              <span *ngIf="montant.errors?.['required'] && montant.touched">
+                Entrez la montant de votre revenu
+              </span>
+            </div>
+        </div>
+        <div class="block">
+          <label for="">Date</label>
+          <input type="date" name="date"
+          [(ngModel)]="revenu.date"
+          #date = "ngModel"
+          [ngClass]="{'is-invalid': date.touched && !date.valid}"
+          required>
+          <div class="invalid-feedback">
+            <span *ngIf="date.errors?.['required'] && date.touched">
+              Entrez la date
+            </span>
+          </div>
+        </div>
+        <div class="block" id="description">
+          <label for="">Description</label>
+          <textarea name="description" id="" cols="30" rows="10"
+            [(ngModel)]="revenu.description"
+            #description = "ngModel"
+            [ngClass]="{'is-invalid': description.touched && !description.valid}"
+            required>
+          </textarea>
+          <div class="invalid-feedback">
+            <span *ngIf="description.errors?.['required'] && description.touched">
+              Entrez un description du revenu
+            </span>
+          </div>
+        </div>
+
+      </div>
+      <div class="block-button">
+        <button type="submit" class="enr">Enregistrer</button>
+        <button type="reset" class="an">Annuler</button>
+      </div>
+
+    </form>
+  </div>
+  <a href="" [routerLink]="['/revenu']">Liste des revenus</a>
+
+
+</section>
+
+
+<!--
+<label for="">Catégorie de revenu</label>
+<select aria-label="Books nad Snippets" name="categorie" [(ngModel)]="revenu.categorie">
+<optgroup label="CATEGORIE">
+<option value="salaire">SALAIRE</option>
+<option value="jobs">JOBS</option>
+<option value="tontine">TONTINE</option>
+<option value="autre">AUTRE</option>
+</optgroup>
+</select>
+
+<button>Suivant</button>
+-->

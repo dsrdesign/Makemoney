@@ -1,22 +1,23 @@
 {
   "depenses": [
     {
-      "categorie": "Sante",
-      "nom": "Achat de medicament",
-      "description": "Medicament pour le palu",
-      "montant": 2500,
-      "date": "2023-03-01",
-      "id": 1
+      "categorie": "jobs",
+      "nom": "Loyer de la maison de Lopgom",
+      "montant": 25000,
+      "date": "2023-03-30",
+      "description": "fggfghhg kjjkkjjk dfsdsdwee gfgfg",
+      "id": 6
     },
     {
-      "categorie": "Sante",
+      "id": 7
+    },
+    {
+      "categnorie": "Sante",
       "nom": "Achat de medicament",
       "montant": 25000,
-      "date": "2023-03-01",
-      "id": 5
-    },
-    {
-      "id": 6
+      "date": "2023-04-01",
+      "description": "ddfd",
+      "id": 8
     }
   ],
   "revenus": [
@@ -28,25 +29,49 @@
       "id": 5
     },
     {
-      "categorie": "salaire",
-      "nom": "Salaire chez Tk group",
-      "montant": null,
-      "date": "0001-02-01",
-      "id": 6
-    },
-    {
       "categorie": "jobs",
-      "nom": "Salaire chez Tk group",
+      "nom": "Loyer de la maison de Lopgom",
       "montant": 25000,
-      "date": "2023-03-04",
-      "id": 7
+      "date": "2023-03-30",
+      "description": "fggfghhg kjjkkjjk dfsdsdwee gfgfg",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "dsr@gmail.com",
+      "password": "dsr",
+      "prenom": "Roland",
+      "nom": "DJENWA"
     },
     {
-      "categorie": "salaire",
-      "nom": "Salaire chez Tk group",
-      "montant": 500000,
-      "date": "2023-03-01",
-      "id": 8
+      "nom": "fs",
+      "prenom": "df",
+      "email": "dfs",
+      "password": "tradex",
+      "id": 2
+    },
+    {
+      "nom": "DJENWA",
+      "prenom": "ROLAND",
+      "email": "mambo@mambo.com",
+      "password": "root",
+      "id": 3
+    },
+    {
+      "nom": "DODO",
+      "prenom": "Rene",
+      "email": "donalduck@gmail.com",
+      "password": "root",
+      "id": 4
+    },
+    {
+      "nom": "Tomas",
+      "prenom": "Rovert",
+      "email": "rob",
+      "password": "rob",
+      "id": 5
     }
   ]
 }

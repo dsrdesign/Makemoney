@@ -1,0 +1,101 @@
+<section>
+
+  <h1>Nouvelle depense</h1>
+  <div class="forms">
+    <form (ngSubmit)="enrDepense(registerForm.value)" #registerForm="ngForm">
+
+      <div class="blocks-input">
+        <div class="block">
+          <label for="">Categorie de depense</label>
+          <select name="categorie"
+            [(ngModel)]="depense.categorie"
+            #categorie = "ngModel"
+            [ngClass]="{'is-invalid': categorie.touched && !categorie.valid}"
+            required>
+            <option value="" disabled selected> Selectionner une categorie</option>
+            <option *ngFor="let categorie of categories" value={{categorie.id}}>{{categorie.categorie}}</option>
+
+          </select>
+          <div class="invalid-feedback">
+            <span *ngIf="categorie.errors && categorie.touched">
+              Entrer la categorie
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Depense</label>
+          <input type="text" list="Depense" name="nom" placeholder="Depense"
+          [(ngModel)]="depense.nom"
+          #nom = "ngModel"
+          [ngClass]="{'is-invalid': nom.touched && !nom.valid}"
+          minlength="4" required>
+          <datalist id="Depense">
+            <option value="Nouveaux vetements">
+            <option value="Achat de medicament">
+            <option value="Transport">
+            <option value="Achat d'un livre">
+            <option value="Loyer de la maison"></option>
+            <option value="Internet"></option>
+          </datalist>
+          <div class="invalid-feedback">
+            <span *ngIf="nom.errors?.['required'] && nom.touched">
+              Entrer la depense
+            </span>
+            <span *ngIf="nom.errors?.['minlength'] && nom.touched">
+              Minimunm 4 lettres
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Montant</label>
+          <input type="number" placeholder="Montant" name="montant"
+          [(ngModel)]="depense.montant"
+          #montant = "ngModel"
+          [ngClass]="{'is-invalid': montant.touched && !montant.valid}"
+          required>
+          <div class="invalid-feedback">
+            <span *ngIf="montant.errors && montant.touched">
+              Entrer le montant
+            </span>
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Date</label>
+          <input type="date" name="date"
+          [(ngModel)]="depense.date"
+          #date = "ngModel"
+          [ngClass]="{'is-invalid': date.touched && !date.valid}"
+          required>
+          <div class="invalid-feedback">
+            <span *ngIf="date.errors && date.touched">
+              Entrer la date
+            </span>
+          </div>
+        </div>
+        <div class="block" id="description">
+          <label for="">Description</label>
+          <textarea name="description" id="" cols="30" rows="10"
+          [(ngModel)]="depense.description"
+          #description = "ngModel"
+          [ngClass]="{'is-invalid': description.touched && !description.valid}"
+          required></textarea>
+          <div class="invalid-feedback">
+            <span *ngIf="description.errors && description.touched">
+              Entrer la description
+            </span>
+          </div>
+        </div>
+
+      </div>
+      <div class="block-button">
+        <button type="submit" class="enr">Enregistrer</button>
+        <button type="reset" class="an">Annuler</button>
+      </div>
+
+    </form>
+  </div>
+  <a href="#" [routerLink]="['/depense']"> Liste des depenses </a>
+
+
+
+</section>

@@ -1,0 +1,104 @@
+ .nav-bar{
+  left: 0%;
+  top: 0%;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+
+}
+
+ .nav-bar .dropdown{
+  position: absolute;
+  margin-left: 20px;
+  background-color: #044999;
+  color: #fff;
+  border-radius: 0px 15px 15px 15px ;
+}
+
+#dropdown{
+  display: none;
+}
+
+ .nav-bar .dropdown ul li{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 0px 15px 15px 0px ;
+  cursor: pointer;
+}
+
+ .nav-bar .dropdown ul li:hover{
+  background-color: #8ba4c0;
+}
+
+ .nav-bar .dropdown img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+ .nav-bar .img-menu{
+  width: 30px;
+  height: 30px;
+
+}
+
+
+
+#profile{
+  display: none;
+}
+
+.nav-bar .profile .dropdown{
+  position: absolute;
+  margin-left: -120px;
+  background-color: #044999;
+  opacity: 0.8;
+  color: #fff;
+  border-radius: 15px 0px 15px 15px ;
+}
+
+ .nav-bar .profile img{
+  width: 30px;
+  border: 5px solid #044999;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#burger2{
+  display: none;
+}
+
+.nav-bar .profile .dropdown ul li{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px 0px 15px 15px ;
+  cursor: pointer;
+}
+
+ .nav-bar .profile .dropdown ul li:hover{
+  background-color: #8ba4c0;
+}
+
+ .nav-bar .profile .dropdown img{
+  width: 20px;
+  margin-right: 10px;
+}
+
+
+@media (max-width: 1010px){
+  #burger1{
+    display: none;
+  }
+
+  #burger2{
+    display: block;
+  }
+
+  #dropdown{
+    display: flex;
+  }
+
+}

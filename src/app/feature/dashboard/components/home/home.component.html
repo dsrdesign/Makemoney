@@ -1,0 +1,146 @@
+<section>
+  <div class="block">
+    <div class="row">
+      <p class="para">Total des revenus</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/le-revenu.png" alt="">
+        <div class="montant">
+          <h1>{{revenuMois}} <span>XAF</span></h1>
+           <p>Revenu du mois</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Plus grosse depense</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/le-revenu.png" alt="">
+        <div class="montant">
+          <h1>50.000 <span>XAF</span></h1>
+          <p>Education</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Total des depenses</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/depenses.png" alt="">
+        <div class="montant">
+          <h1 >{{depenseMois}} <span>XAF</span></h1>
+          <p>Depense du mois</p>
+
+          <!-- <div class="revenu">
+            <p>Salaire</p>
+            <div class="square"></div>
+          </div>
+          <div class="revenu">
+            <p>Business</p>
+            <div class="square"></div>
+          </div>
+          <div class="revenu">
+            <p>Autres</p>
+            <div class="square"></div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="row">
+      <p class="para">Total des revenus</p>
+      <div class="graphe">
+        <div id="chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [plotOptions]="chartOptions.plotOptions"
+            [labels]="chartOptions.labels"
+            [fill]="chartOptions.fill"
+            [stroke]="chartOptions.stroke"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Plus grosse depense</p>
+      <div class="graphe">
+        <div id="chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [plotOptions]="chartOptions.plotOptions"
+            [labels]="chartOptions.labels"
+            [legend]="chartOptions.legend"
+            [fill]="chartOptions.fill"
+            [stroke]="chartOptions.stroke"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Total des depense</p>
+      <div class="graphe">
+        <div id="chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [plotOptions]="chartOptions.plotOptions"
+            [labels]="chartOptions.labels"
+            [fill]="chartOptions.fill"
+            [stroke]="chartOptions.stroke"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="row" style="width: 100% !important;">
+      <p class="para">Evolution des actions financières</p>
+      <div class="graphe">
+        <div id="chart1">
+          <apx-chart
+    [series]="chartOption1.series"
+    [chart]="chartOption1.chart"
+    [dataLabels]="chartOption1.dataLabels"
+    [plotOptions]="chartOption1.plotOptions"
+    [yaxis]="chartOption1.yaxis"
+    [legend]="chartOption1.legend"
+    [fill]="chartOption1.fill"
+    [stroke]="chartOption1.stroke"
+    [tooltip]="chartOption1.tooltip"
+    [xaxis]="chartOption1.xaxis"
+  ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block2">
+
+    <!-- <div class="titre">
+      <button>Ce mois</button>
+      <button>Cette semaine</button>
+      <button>Aujourd'hui</button>
+    </div>
+     <div class="top">
+      <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [plotOptions]="chartOptions.plotOptions"
+      [labels]="chartOptions.labels"
+      [legend]="chartOptions.legend"
+      [colors]="chartOptions.colors"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+
+
+
+    </div> -->
+  </div>
+</section>

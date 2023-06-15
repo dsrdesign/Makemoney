@@ -1,0 +1,81 @@
+<section>
+
+  <h1>Mon Profile</h1>
+  <div class="forms">
+    <form (reset)="reset()" #profileForm="ngForm" (ngSubmit)="updateProfile(profileForm.value)">
+
+      <div class="blocks-input">
+        <div class="block">
+          <label for="">Nom</label>
+          <input class="input" type="text" placeholder="{{users.name}}" name="name"
+            #name="ngModel"
+            [(ngModel)]="user.name"
+            [disabled]="disa"
+            minlength="4"
+            required>
+          <div class="invalid-feedback">
+            <!-- <span *ngIf="nom.errors && prenom.touched">
+              Entrer la categorie
+            </span> -->
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Prenom</label>
+          <input class="input" type="text" name="surname" #name = "ngModel"  placeholder="{{users.surname}}"
+            [(ngModel)]="user.surname"
+            [disabled]="disa"
+            minlength="4" required>
+          <div class="invalid-feedback">
+            <!-- <span *ngIf="prenom.errors?.['required'] && prenom.touched">
+              Entrer la depense
+            </span>
+            <span *ngIf="prenom.errors?.['minlength'] && prenom.touched">
+              Minimunm 4 lettres
+            </span> -->
+          </div>
+        </div>
+        <div class="block">
+          <label for="">Email</label>
+          <input class="input" type="email" name="email"
+          [(ngModel)]="user.email"
+          #email = "ngModel"
+          [disabled]="disa"
+          placeholder="{{users.email}}"
+          required>
+        </div>
+        <div class="block">
+          <label for="">Mot de passe</label>
+          <input class="input" type="text" name="password"
+          [(ngModel)]="user.password"
+          #password = "ngModel"
+          [disabled]="disa"
+          placeholder="Votre Mot de passe"
+           required >
+          <div class="invalid-feedback">
+            <!-- <span *ngIf="password.errors && password.touched">
+              Entrer la date
+            </span> -->
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div (click)="logout()" class="logout">
+          <img src=".//src/assets/images/logoutb.png" alt="Okay Boss">
+          <p>Log Out</p>
+        </div>
+
+        <div class="block-button">
+          <div  (click)="edite()" class="enr">Editer</div>
+          <button type="submit"class="enr" [disabled]="disaEnregister">Enregistrer</button>
+          <button type="reset" class="an" [disabled]="disaEnregister">Reinitiliser</button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+
+
+
+</section>

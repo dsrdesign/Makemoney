@@ -1,0 +1,134 @@
+section{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0px;
+  background-color: #fff;
+}
+img{
+  width: 40%;
+}
+/* .image{
+  height: 90%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+  color: #fff;
+  background-color: #044999;
+  padding: 0px 20px;
+  border-radius: 10px;
+}
+
+.image h1{
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  margin: 30px 0px;
+}
+
+.image h1 span{
+  color: aqua;
+} */
+
+form{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px 50px;
+  box-shadow: 1px 5px 25px #f1f1f1;
+
+}
+
+form h1{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #044999;
+  margin-bottom: 30px;
+}
+
+form .form{
+  display: flex;
+  flex-direction: column;
+}
+
+form .form .block{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+form .blocks-input .block .invalid-feedback{
+  color: #c51414;
+ }
+
+form .form .block input{
+  font-size: 1.2rem;
+  border-bottom: 1px solid #000;
+  padding: 10px 0px;
+}
+
+form .form .row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+form .form .row .check{
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form .form .row .check input{
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+form .form .row p{
+  color: #044999;
+  cursor: pointer;
+}
+
+form .form button{
+  font-size: 1.2rem;
+  padding: 15px 0px;
+  margin: 30px 0px;
+  color: #fff;
+  background-color: #044999;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+form .form button:disabled{
+  background-color: #3e3f3f;
+}
+
+form p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+form p span{
+  color: #044999;
+  cursor: pointer;
+}
+
+
+@media (max-height: 610px){
+  section{
+    height: auto;
+  }
+}

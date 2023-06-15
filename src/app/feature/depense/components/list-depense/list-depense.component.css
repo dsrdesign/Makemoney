@@ -1,0 +1,349 @@
+section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  padding-top: 15px;
+}
+
+.list-depense{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.list-depense h1{
+  color: #044999;
+  font-size: 2em;
+
+}
+
+.list-depense button{
+  padding: 20px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #044999;
+}
+
+.list-depense button:hover{
+  background-color: #3e8ee9;
+}
+
+
+.block{
+  width: 80%;
+  display: flex;
+  margin-bottom: 60px;
+  padding: 5px 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block .row{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 0px 5px;
+
+}
+
+.block .row .para{
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #044999;
+}
+
+.block .row .graphe{
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px -10px #000;
+}
+
+.block .row .graphe img{
+  padding: 5px 0px;
+  width: 25%;
+  background-color: #4c8bd3;
+  border-radius: 10px;
+}
+
+ .montant{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+}
+
+.block .row .graphe .montant h1{
+  font-size: 1.5em;
+  color: #044999;
+}
+
+.block .row .graphe .montant h1 span{
+  font-size: 0.5em;
+
+}
+.block .row .graphe .montant p{
+  font-size: 1.2em;
+  color: #4c8bd3;
+}
+
+.block .row .graphe .list-revenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.block .row .graphe .list-revenu .revenu{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 5px ;
+}
+
+.block .row .graphe .list-revenu .revenu p{
+  font-size: 1em;
+  margin-right: 20px;
+}
+
+.block .row .graphe .list-revenu .revenu .square{
+  width: 10px;
+  height: 10px;
+
+}
+
+/* .block .row .graphe .list-revenu .revenu #blue{
+  background-color: #044999;
+}
+
+.block .row .graphe .list-revenu .revenu #orange{
+  background-color: #f89604;
+}
+
+.block .row .graphe .list-revenu .revenu #red{
+  background-color: #f80404;
+} */
+
+table{
+  width:80%;
+  margin-bottom: 100px;
+  border-collapse: collapse;
+  box-shadow: inset 0 0em 0.0em rgba(8, 10, 129, 0.1), 0 0 0 0px rgb(255, 255, 255), 0em 0em 0.5em rgba(145, 144, 144, 0.3);
+}
+
+
+
+th, td {
+  padding: 10px 5px;
+  text-align: left;
+  max-width: 100px;
+
+}
+
+th{
+  background-color: #044999;
+  color: #fff;
+  font-size: 1.2em
+}
+tr:nth-child(odd){
+  background-color: #eee;
+}
+
+tr th#action{
+  text-align: center;
+}
+
+
+tr td.action pre{
+  color: #044999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 2px solid #044999;
+}
+
+tr td.action pre svg{
+  width: 15px;
+  color: #044999;
+}
+
+tr td.action:hover pre svg{
+  color: #fff;
+}
+
+tr td.action:hover pre{
+  background-color: #044999;
+  color: #fff;
+}
+
+tr td.action .dropdown{
+  display: none;
+  position: absolute;
+}
+
+tr td.action:hover .dropdown{
+  margin-top: 0px;
+  padding: 0px 0px;
+  display: block;
+  position: absolute;
+  background-color: #044999;
+  box-shadow: 1px 1px 5px #afafaf;
+  border-radius: 0px 0px 5px 5px;
+  margin-left: 0px;
+}
+tr td.action .dropdown ul {
+  text-align: left;
+  width: 100;
+}
+tr td.action .dropdown ul li {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.7em;
+  color: #fff;
+  cursor: pointer;
+
+}
+tr td.action .dropdown ul li:hover{
+  background-color: #3e8ee9;
+
+}
+
+tr td.action .dropdown ul li  img{
+
+  width: 10px;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+.footer {
+  display: flex;
+  width: 100%;
+  margin-top: 200px;
+  justify-content: center;
+  background-color: #044999;
+  color: #fff;
+  padding: 20px;
+  top: -500px;
+
+}
+
+.footer p{
+  font-size: 0.8em;
+}
+
+
+@media (max-width: 1010px){
+
+  *, *::before, *::after{
+    box-sizing: border-box !important;
+  }
+
+  table, tbody, thead, tr th, td{
+    display: block;
+  }
+
+  thead{
+    display: none;
+  }
+
+  tr{
+    display: block;
+    margin: 15px;
+  }
+
+  td{
+    max-width: 100% !important;
+    text-align: right !important;
+    padding-left: 150px;
+    position: relative;
+    height: 50px;
+    border: 1px solid #fff;
+  }
+
+  td::before{
+    padding: 10px;
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    bottom: 0;
+    background-color: #044999;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+  }
+  .block{
+    flex-direction: column;
+  }
+
+  .block .row{
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* .tabMask{
+    display: none;
+  } */
+
+}
+
+@media (max-width: 615px){
+
+  .list-depense{
+    margin-bottom: 20px;
+  }
+
+  .list-depense h1{
+    color: #044999;
+    font-size: 1.5em;
+  }
+
+  .list-depense button{
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #044999;
+  }
+
+
+  .block .row .para{
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #044999;
+  }
+
+  .tabMask2{
+    display: none;
+  }
+
+}

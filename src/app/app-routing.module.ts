@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChartComponent } from './chart/chart.component';
-import { HomeComponent } from './home/home.component';
-import { ListDepenseComponent } from './list-depense/list-depense.component';
-import { ListRevenuComponent } from './list-revenu/list-revenu.component';
-import { LoginComponent } from './login/login.component';
-import { NewDepenseComponent } from './new-depense/new-depense.component';
-import { NewRevenuComponent } from './new-revenu/new-revenu.component';
+import { ContentLayoutComponent } from './shared/layout-components/content-layout/content-layout.component';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
-  {path: "home", component: HomeComponent},
-  {path:"revenu", component: NewRevenuComponent},
-  {path:"depense", component: NewDepenseComponent},
-  {path:"listRevenu", component: ListRevenuComponent},
-  {path:"listDepense", component: ListDepenseComponent},
-  {path:"login", component: LoginComponent}
+  {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+  {path:'dashboard', component:ContentLayoutComponent, loadChildren: () => import('./feature/dashboard/dashboard.module').then(m => m.DashboardModule)},
+  {path: 'revenu', component:ContentLayoutComponent, loadChildren: () => import('./feature/revenu/revenu.module').then(m => m.RevenuModule)},
+  {path: 'depense', component:ContentLayoutComponent, loadChildren: () => import('./feature/depense/depense.module').then(m => m.DepenseModule)},
+  {path: 'profile', component: ContentLayoutComponent, loadChildren: () => import('./feature/profile/profile.module').then(m => m.ProfileModule)},
+  {path: '**', redirectTo: 'auth'},
+  {path: '**', redirectTo: 'dashboard'},
+  {path: '', redirectTo: 'auth', pathMatch: 'full'}
 
 ];
 

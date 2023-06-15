@@ -1,0 +1,25 @@
+<div class="nav-bar">
+
+  <div>
+    <img (click)="displayMenu()" class="img-menu" id="burger1" src=".//src/assets/images/manu.png" alt="">
+    <img class="img-menu" id="burger2" src=".//src/assets/images/manu.png" alt="">
+    <div class="dropdown" id="dropdown">
+      <ul>
+        <li [routerLink]="['/dashboard']"> <img src=".//src/assets/images/dashboard.png" alt=""> Tableau de bord </li>
+        <li [routerLink]="['/revenu']"> <img src=".//src/assets/images/increased-revenue.png" alt=""> Revenu</li>
+        <li [routerLink]="['/depense']"> <img src=".//src/assets/images/expenses.png" alt=""> Depense </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="profile">
+    <img (click)="displayProfile()" src=".//src/assets/images/DSR.png" alt="">
+    <div class="dropdown" id="profile">
+      <ul>
+        <li [routerLink]="['/profile']"> <img src=".//src/assets/images/dashboard.png" alt=""> Profile </li>
+        <li (click)="logout()"> <img src=".//src/assets/images/increased-revenue.png" alt=""> Deconnexion</li>
+      </ul>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,55 @@
+<section>
+  <!-- <div class="image">
+
+    <img src="" alt="Logo">
+    <h1><span>Gèrez tous vos</span> finances en utilisant notre platforme </h1>
+    <p>Opter pour notre platfome c'est Reprendre le controle sur ses finances</p>
+
+  </div> -->
+  <img src=".//src/assets/images/signup-pana.png" alt="">
+    <form action="" #registerForm="ngForm" (ngSubmit)="onSign(registerForm.value)">
+      <h1>Moneymake</h1>
+      <div class="form">
+
+        <div class="block">
+          <label for="nom">Nom</label>
+          <input type="text" placeholder="Entrez votre nom" name="name"
+            [(ngModel)]="user.name"
+            #nom ="ngModel"
+            required
+          >
+
+
+        </div>
+
+
+        <div class="block">
+          <label for="prenom">Prenom</label>
+          <input type="text" placeholder="Entrez votre nom" name="surname"
+            [(ngModel)]="user.surname"
+            #prenom ="ngModel"
+            required
+          >
+        </div>
+
+        <div class="block">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Entrez votre adresse mail" name="email"
+            [(ngModel)]="user.email"
+            #email ="ngModel">
+        </div>
+
+        <div class="block">
+          <label for="password">Mot de passe</label>
+          <input type="password" placeholder="Entrez votre mot de passe" name="password"
+            [(ngModel)]="user.password"
+            #password = "ngModel"
+            >
+        </div>
+
+        <button type="submit"  [disabled]="!registerForm.form.valid" >S'inscrire</button>
+
+        <p>J'ai déja un compte ! <span [routerLink]="['auth']">Connecter-vous</span></p>
+      </div>
+    </form>
+</section>

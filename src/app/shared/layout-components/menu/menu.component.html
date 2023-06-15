@@ -1,0 +1,23 @@
+<div class="menu" id="menu">
+  <div class="nav-ba">
+    <h1 class="logo">Make Money</h1>
+    <div class="lists-menu">
+      <div class="list-menu" [routerLink]="['/dashboard']">
+        <img src=".//src/assets/images/dashboard.png" alt="">
+        <p>Tableau de bord</p>
+      </div>
+      <div class="list-menu" [routerLink]="['/revenu']">
+        <img src=".//src/assets/images/increased-revenue.png" alt="">
+        <p>Revenu</p>
+      </div>
+      <div class="list-menu" [routerLink]="['/depense']">
+        <img src=".//src/assets/images/expenses.png" alt="">
+        <p>Depense</p>
+      </div>
+    </div>
+  </div>
+  <div (click)="logout()" class="logout">
+    <img src=".//src/assets/images/expenses.png" alt="">
+    <p>Log out</p>
+  </div>
+</div>

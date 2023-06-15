@@ -1,0 +1,98 @@
+<section>
+
+  <div class="list-depense">
+    <h1>Liste des depenses</h1>
+    <button (click)="ajoutDepense()">Nouvelle depense</button>
+  </div>
+
+  <div class="block">
+    <div class="row">
+      <p class="para">Total des depenses</p>
+      <div class="graphe">
+        <img src=".//src/assets/images/depenses.png" alt="">
+        <div class="montant">
+          <h1 number> {{depenseMois}} <span>XAF</span></h1>
+          <p>Depenses du mois</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="para">Differentes sources de depenses</p>
+      <div class="graphe">
+        <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [colors]="chartOptions.colors"
+        [labels]="chartOptions.labels"
+        [legend]="chartOptions.legend"
+        [responsive]="chartOptions.responsive"
+      ></apx-chart>
+        <div class="list-revenu">
+
+          <div class="revenu">
+            <p>Education</p>
+            <div class="square" style="background-color: #044999;"></div>
+          </div>
+          <div class="revenu">
+            <p>Transport</p>
+            <div class="square" style="background-color: #3d0499;"></div>
+          </div>
+          <div class="revenu">
+            <p>Nutrition</p>
+            <div class="square" style="background-color: #048f99;"></div>
+          </div>
+          <div class="revenu">
+            <p>Sante</p>
+            <div class="square" style="background-color: #049942;"></div>
+          </div>
+          <div class="revenu">
+            <p>Maison</p>
+            <div class="square" style="background-color: #839904;"></div>
+          </div>
+          <div class="revenu">
+            <p>Autres</p>
+            <div class="square" style="background-color: #997604;"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th >Categorie</th>
+        <th>Revenu</th>
+        <th>Montant</th>
+        <th >Description</th>
+        <th class="tabMask2">Date</th>
+        <th id="action">Action</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let depense of depenses">
+        <td data-label=""><input type="checkbox"></td>
+        <td data-label="Categorie" >{{depense.Action.Categorie.categorie}}</td>
+        <td data-label="Depense">{{depense.Action.action}}</td>
+        <td data-label="Montant">{{depense.montant}}</td>
+        <td data-label="Description" class="tabMask2" >{{depense.description}}</td>
+        <td data-label="Date">{{depense.date}}</td>
+        <td data-label="Action" class="action">
+          <pre>Action <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="m15.344 17.778c0-.414-.336-.75-.75-.75h-5.16c-.414 0-.75.336-.75.75s.336.75.75.75h5.16c.414 0 .75-.336.75-.75zm2.206-4c0-.414-.336-.75-.75-.75h-9.596c-.414 0-.75.336-.75.75s.336.75.75.75h9.596c.414 0 .75-.336.75-.75zm2.45-4c0-.414-.336-.75-.75-.75h-14.5c-.414 0-.75.336-.75.75s.336.75.75.75h14.5c.414 0 .75-.336.75-.75zm2-4c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg></pre>
+          <div class="dropdown">
+            <ul>
+              <li><img src=".//src/assets/images/editer.png" alt=""> Editer</li>
+              <li (click)="deleteDepense(depense.Action.id)"><img src=".//src/assets/images/supprimer.png" alt=""> Supprimer</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
